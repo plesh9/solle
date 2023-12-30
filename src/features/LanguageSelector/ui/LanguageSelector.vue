@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { BaseDropdown, LangIcon, CloseIcon } from "@/shared/ui";
-import { EnumLanguage, ILanguageSelectorItem, ILanguageSelectorOption } from "../types";
+import { EnumLanguage, type ILanguageSelectorItem, type ILanguageSelectorOption } from "../types";
 
 interface LanguageSelectorProps {
   className?: string;

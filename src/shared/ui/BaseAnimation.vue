@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-import { MotionVariants, useMotion } from "@vueuse/motion";
+import { type MotionVariants, useMotion } from "@vueuse/motion";
 
 interface IAnimation {
   delay: number;

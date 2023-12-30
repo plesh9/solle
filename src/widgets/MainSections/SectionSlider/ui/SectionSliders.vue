@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { filename } from "pathe/utils";
 
-import { ISlide } from "../types";
+import { type ISlide } from "../types";
 import { SLIDERS } from "../sliders";
 
 import { BaseContainer, CheckMarkIcon, BaseAnimation, LongArrowIcon } from "@/shared/ui";
