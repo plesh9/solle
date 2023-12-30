@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import "./base/root";
+@import "./base/animations";
+@import "./variables";
+@import "./base/null";
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: toRem(3);
+  height: toRem(3);
+
+  &-thumb {
+    background-color: $accent;
+    border-radius: $radius;
+  }
+
+  &-track {
+    background-color: $grey;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  padding-top: toRem(150);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: toRem(80);
+  }
+}
+
+// Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
+.wrapper {
+  @include flexColumn();
+  min-height: 100%;
+  padding-top: $header_height;
+
+  // Прижимаем footer
+  > main {
+    @include flexColumn();
+    flex: 1 1 auto;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+
+// Текст  ======================================================================================================================================================================================================================
+h1 {
+  @include adaptiveValue("font-size", 60, 42, 991, 375, 1);
+  font-weight: 300;
+  line-height: 150%; /* 90/60 */
+}
+
+h2 {
+  @include adaptiveValue("font-size", 40, 24, 991, 375, 1);
+  line-height: 150%; /* 60/40 */
+}
+
+.main-subtitle {
+  margin-top: toRem(16);
+  font-size: toRem(16);
+
+  @media (max-width: $mobile) {
+    font-size: toRem(14);
+  }
+}
+
+.text {
+  &_subtitle {
+    font-size: toRem(16);
+    font-weight: 400;
+    margin-top: toRem(12);
+  }
+
+  &_accent {
+    color: $accent;
+  }
+}
+
+.sliders {
+  &__bullets {
+    @include flexRow(center, flex-end);
+    column-gap: toRem(8);
+    margin-top: toRem(40);
+
+    @media (max-width: $tablet) {
+      justify-content: center;
+      margin-top: toRem(32);
+    }
+  }
+
+  &__bullet {
+    display: inline-block;
+    background-color: $grey;
+    width: toRem(20);
+    height: toRem(20);
+    border-radius: 50%;
+    transition: opacity $transition;
+    cursor: pointer;
+
+    @media (any-hover: hover) {
+      &:hover:not(&-active) {
+        opacity: 0.8;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      width: toRem(16);
+      height: toRem(16);
+    }
+
+    &-active {
+      background-color: $accent;
+    }
+  }
+}
