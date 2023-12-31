@@ -5,7 +5,7 @@
 </template>
 
 <style scoped lang="scss">
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .container {
   max-width: toRem($maxWidthContainer);

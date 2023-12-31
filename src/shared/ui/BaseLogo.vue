@@ -1,13 +1,7 @@
-<script lang="ts" setup>
-interface LogoProps {
-  className?: string;
-}
-
-defineProps<LogoProps>();
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <a href="#" :class="className" class="logo">
+  <a href="#" class="logo">
     <img
       src="@/app/assets/images/icons/logo.png"
       class="logo__image"

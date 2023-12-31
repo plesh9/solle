@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import { type MotionVariants, useMotion } from "@vueuse/motion";
+import { ref } from 'vue';
+import { type MotionVariants, useMotion } from '@vueuse/motion';
 
 interface IAnimation {
   delay: number;
   duration: number;
-  variant?: "slideDown" | "slideLeft";
-  visible?: "visibleOnce" | "visible" | "enter";
+  variant?: 'slideDown' | 'slideLeft';
+  visible?: 'visibleOnce' | 'visible' | 'enter';
 }
 
 const props = withDefaults(defineProps<IAnimation>(), {
   delay: 0,
   duration: 500,
-  variant: "slideDown",
-  visible: "visibleOnce",
+  variant: 'slideDown',
+  visible: 'visibleOnce',
 });
 
 const targetRef = ref<HTMLElement | null>(null);

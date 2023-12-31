@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { MainHeader } from "@/widgets/Header";
-import { SectionPreview, SectionSliders } from "@/widgets/MainSections";
-import "swiper/css";
-import "swiper/css/effect-fade";
+import { MainHeader } from '@/widgets/Header';
+import {
+  SectionPreview,
+  SectionSliders,
+  SectionVideo,
+} from '@/widgets/MainSections';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 </script>
 
 <template>
@@ -11,6 +15,8 @@ import "swiper/css/effect-fade";
     <main>
       <SectionPreview />
       <SectionSliders />
+      <SectionVideo />
+      <section />
     </main>
   </div>
 </template>

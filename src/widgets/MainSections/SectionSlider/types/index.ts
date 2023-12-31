@@ -5,8 +5,8 @@ export interface ISlideItem {
 
 export interface ISlide {
   title: {
-    text: string,
-    strong: string
+    text: string;
+    strong: string;
   };
   subtitle: string;
   imageUrl: string;

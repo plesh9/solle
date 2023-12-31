@@ -1,6 +1,6 @@
 <script setup lang="ts">
-type ButtonElements = "button" | "a";
-type ButtonVariants = "base" | "secondary";
+type ButtonElements = 'button' | 'a';
+type ButtonVariants = 'base' | 'secondary';
 
 interface IButton {
   as?: ButtonElements;
@@ -8,8 +8,8 @@ interface IButton {
 }
 
 withDefaults(defineProps<IButton>(), {
-  as: "button",
-  variant: "base",
+  as: 'button',
+  variant: 'base',
 });
 </script>
 
@@ -20,7 +20,7 @@ withDefaults(defineProps<IButton>(), {
 </template>
 
 <style scoped lang="scss">
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .button {
   display: inline-flex;

@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { BaseContainer, BaseButton, BaseAnimation } from "@/shared/ui";
+import { BaseContainer, BaseButton, BaseAnimation } from '@/shared/ui';
 
-const price = "37.95";
-const linkToProduct = "#";
+const price = '37.95';
+const linkToProduct =
+  'https://www.sollenaturals.com/product/1094?country=US&lang=en&sngl=AJ47BJ&uli=0';
 </script>
 
 <template>
@@ -15,21 +16,28 @@ const linkToProduct = "#";
           </BaseAnimation>
           <BaseAnimation :delay="500">
             <p class="main-subtitle">
-              This box is a great way to dip your toes into the world of adaptogens before
-              diving into a complete health program! The Variety Trial Box contains three
-              individual servings of each of our five, best-selling adaptogenic drinks. It
-              will give you the chance to experiment with each and figure out which
-              serving method best suits you, as well as get a taste for what these
-              powerful and potent formulas can add to your well-being.
+              This box is a great way to dip your toes into the world of
+              adaptogens before diving into a complete health program! The
+              Variety Trial Box contains three individual servings of each of
+              our five, best-selling adaptogenic drinks. It will give you the
+              chance to experiment with each and figure out which serving method
+              best suits you, as well as get a taste for what these powerful and
+              potent formulas can add to your well-being.
             </p>
           </BaseAnimation>
           <BaseAnimation :delay="700">
             <div class="preview__info">
               <div class="preview__info_pc">
-                <BaseButton as="a" :href="linkToProduct" class="sad">Buy Now</BaseButton>
+                <BaseButton as="a" :href="linkToProduct" class="sad"
+                  >Buy Now</BaseButton
+                >
                 <span class="preview__price">$ {{ price }}</span>
               </div>
-              <BaseButton as="a" :href="linkToProduct" class="preview__button-tablet">
+              <BaseButton
+                as="a"
+                :href="linkToProduct"
+                class="preview__button-tablet"
+              >
                 Buy Now $ {{ price }}
               </BaseButton>
             </div>
@@ -44,7 +52,7 @@ const linkToProduct = "#";
 </template>
 
 <style lang="scss" scoped>
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .preview {
   padding-top: toRem(92);

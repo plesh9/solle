@@ -1,27 +1,25 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import { BaseDropdown, LangIcon, CloseIcon } from "@/shared/ui";
-import { EnumLanguage, type ILanguageSelectorItem, type ILanguageSelectorOption } from "../types";
-
-interface LanguageSelectorProps {
-  className?: string;
-}
-
-defineProps<LanguageSelectorProps>();
+import { ref } from 'vue';
+import { BaseDropdown, LangIcon, CloseIcon } from '@/shared/ui';
+import {
+  EnumLanguage,
+  type ILanguageSelectorItem,
+  type ILanguageSelectorOption,
+} from '../types';
 
 const dropdownRef = ref<InstanceType<typeof BaseDropdown> | null>(null);
 const parentRef = ref<HTMLElement | null>(null);
 const selectedLanguage = ref<EnumLanguage>(EnumLanguage.en);
 const dropdownOptions = ref<ILanguageSelectorOption[]>([
   {
-    label: "Language",
+    label: 'Language',
     items: [
       {
-        text: "English  (EN)",
+        text: 'English  (EN)',
         value: EnumLanguage.en,
       },
       {
-        text: "Español  (ES)",
+        text: 'Español  (ES)',
         value: EnumLanguage.es,
       },
     ],
@@ -31,6 +29,7 @@ const dropdownOptions = ref<ILanguageSelectorOption[]>([
 const openDropdown = () => {
   dropdownRef.value?.open();
 };
+
 const closeDropdown = () => {
   dropdownRef.value?.close();
 };
@@ -44,7 +43,7 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
   <div
     ref="parentRef"
     class="language"
-    :class="[className, { isOpen: dropdownRef?.isOpen }]"
+    :class="{ isOpen: dropdownRef?.isOpen }"
     @mouseover="openDropdown"
     @mouseleave="closeDropdown"
   >
@@ -87,7 +86,7 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
 </template>
 
 <style lang="scss" scoped>
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .language {
   position: relative;
@@ -162,7 +161,9 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
     border-radius: toRem(30);
     font-weight: 200;
     color: #908b84;
-    transition: color $transition, background-color $transition;
+    transition:
+      color $transition,
+      background-color $transition;
 
     @media (any-hover: hover) {
       &:hover {

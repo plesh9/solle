@@ -1,20 +1,28 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, EffectFade, Autoplay } from "swiper/modules";
-import { filename } from "pathe/utils";
+import { ref } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import { filename } from 'pathe/utils';
 
-import { type ISlide } from "../types";
-import { SLIDERS } from "../sliders";
+import { type ISlide } from '../types';
+import { SLIDERS } from '../sliders';
 
-import { BaseContainer, CheckMarkIcon, BaseAnimation, LongArrowIcon } from "@/shared/ui";
+import {
+  BaseContainer,
+  CheckMarkIcon,
+  BaseAnimation,
+  LongArrowIcon,
+} from '@/shared/ui';
 
 const sliders = ref<ISlide[]>(SLIDERS);
 const slider = ref<any>(null);
 const modules = [Pagination, EffectFade, Autoplay];
-const glob = import.meta.glob("../images/*.png", { eager: true });
+const glob = import.meta.glob('../images/*.png', { eager: true });
 const images = Object.fromEntries(
-  Object.entries(glob).map(([key, value]: any[]) => [filename(key), value.default])
+  Object.entries(glob).map(([key, value]: any[]) => [
+    filename(key),
+    value.default,
+  ])
 );
 
 const onSwiper = (swiper: any) => {
@@ -39,6 +47,9 @@ const onSwiper = (swiper: any) => {
             modifierClass: 'sliders__',
             bulletClass: 'sliders__bullet',
             bulletActiveClass: 'sliders__bullet-active',
+            renderBullet: (index: number, className: string) => {
+              return `<button class='${className}' type='button' />`;
+            },
           }"
           :modules="modules"
           @swiper="onSwiper"
@@ -54,6 +65,38 @@ const onSwiper = (swiper: any) => {
           }"
           autoHeight
         >
+          <SwiperSlide v-for="(slide, index) in sliders" :key="index">
+            <div class="slide">
+              <div class="slide__image">
+                <img :src="images[`${slide.imageUrl}`]" alt="Slide Image" />
+              </div>
+              <div class="slide__block">
+                <div class="slide__header">
+                  <h3 class="slide__title">
+                    {{ slide.title.text }}<b>{{ slide.title.strong }}</b>
+                  </h3>
+                  <p class="slide__subtitle">{{ slide.subtitle }}</p>
+                </div>
+                <!-- You can also loop through slide items if needed -->
+                <ul class="slide__items">
+                  <li v-for="(item, index) in slide.items" :key="index">
+                    <BaseAnimation
+                      :delay="(index + 1) * 200"
+                      variant="slideLeft"
+                    >
+                      <div class="slide__item">
+                        <div><CheckMarkIcon /></div>
+                        <p>
+                          <strong>{{ item.title }}</strong> - {{ item.text }}
+                        </p>
+                      </div>
+                    </BaseAnimation>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </SwiperSlide>
+
           <div class="sliders__buttons">
             <button
               class="sliders__button sliders__button-prev"
@@ -70,35 +113,6 @@ const onSwiper = (swiper: any) => {
               <LongArrowIcon />
             </button>
           </div>
-
-          <SwiperSlide v-for="(slide, index) in sliders" :key="index">
-            <div class="slide">
-              <div class="slide__image">
-                <img :src="images[`${slide.imageUrl}`]" alt="Slide Image" />
-              </div>
-              <div class="slide__block">
-                <div class="slide__header">
-                  <h3 class="slide__title">
-                    {{ slide.title.text }}<b>{{ slide.title.strong }}</b>
-                  </h3>
-                  <p class="slide__subtitle">{{ slide.subtitle }}</p>
-                </div>
-                <!-- You can also loop through slide items if needed -->
-                <ul class="slide__items">
-                  <li v-for="(item, index) in slide.items" :key="index">
-                    <BaseAnimation :delay="(index + 1) * 200" variant="slideLeft">
-                      <div class="slide__item">
-                        <div><CheckMarkIcon /></div>
-                        <p>
-                          <strong>{{ item.title }}</strong> - {{ item.text }}
-                        </p>
-                      </div>
-                    </BaseAnimation>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </SwiperSlide>
         </Swiper>
       </div>
     </BaseContainer>
@@ -106,7 +120,7 @@ const onSwiper = (swiper: any) => {
 </template>
 
 <style lang="scss" scoped>
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .sliders {
   &__header {
@@ -131,12 +145,12 @@ const onSwiper = (swiper: any) => {
     z-index: $zIndex_1;
 
     @media (max-width: $tablet) {
-      @include adaptiveValue("right", 104, 0, 991, 788, 1);
-      @include adaptiveValue("top", 748, 728, 788, 767, 1);
+      @include adaptiveValue('right', 104, 0, 991, 788, 1);
+      @include adaptiveValue('top', 748, 728, 788, 767, 1);
     }
 
     @media (max-width: $mobile) {
-      @include adaptiveValue("top", 715, 350, 767, 375, 1);
+      @include adaptiveValue('top', 715, 350, 767, 375, 1);
       column-gap: toRem(12);
     }
   }

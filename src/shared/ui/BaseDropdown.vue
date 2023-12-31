@@ -1,20 +1,21 @@
 <script lang="ts" setup>
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref } from 'vue';
 
 interface BaseDropdownProps {
   className?: string;
   closeDropdown?: () => void;
   parentRef?: HTMLElement | null;
-  position?: "center" | "right";
+  position?: 'center' | 'right';
 }
 
 const props = withDefaults(defineProps<BaseDropdownProps>(), {
-  position: "center",
+  position: 'center',
 });
 
 const isOpen = ref(false);
 const open = () => (isOpen.value = true);
 const close = () => (isOpen.value = false);
+const toggle = () => (isOpen.value = !isOpen.value);
 
 const handleClickOutside = (event: MouseEvent) => {
   if (props.parentRef && !props.parentRef.contains(event.target as Node)) {
@@ -23,14 +24,15 @@ const handleClickOutside = (event: MouseEvent) => {
 };
 
 onMounted(() => {
-  document.addEventListener("click", handleClickOutside);
+  document.addEventListener('click', handleClickOutside);
 });
 
 onUnmounted(() => {
-  document.removeEventListener("click", handleClickOutside);
+  document.removeEventListener('click', handleClickOutside);
 });
 
 defineExpose({
+  toggle,
   open,
   close,
   isOpen,
@@ -48,7 +50,7 @@ defineExpose({
 </template>
 
 <style scoped lang="scss">
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .dropdown {
   position: absolute;

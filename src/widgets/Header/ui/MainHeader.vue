@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { BaseContainer, BaseLogo } from "@/shared/ui";
-import { LanguageSelector } from "@/features/LanguageSelector";
+import { BaseContainer, BaseLogo } from '@/shared/ui';
+import { LanguageSelector } from '@/features/LanguageSelector';
 
 interface HeaderProps {
   className?: string;
@@ -21,7 +21,7 @@ defineProps<HeaderProps>();
 </template>
 
 <style lang="scss" scoped>
-@import "src/app/assets/styles/variables.scss";
+@import 'src/app/assets/styles/variables.scss';
 
 .header {
   position: fixed;
