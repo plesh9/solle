@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import './base/root';
-@import './base/animations';
 @import './variables';
 @import './base/null';
 
@@ -67,6 +66,11 @@ h2 {
   line-height: 150%; /* 60/40 */
 }
 
+h3 {
+  @include adaptiveValue('font-size', 36, 28, 991, 375, 1);
+  line-height: 150%; /* 54/36 */
+}
+
 .main-subtitle {
   margin-top: toRem(16);
   font-size: toRem(16);
@@ -85,43 +89,5 @@ h2 {
 
   &_accent {
     color: $accent;
-  }
-}
-
-.sliders {
-  &__bullets {
-    @include flexRow(center, flex-end);
-    column-gap: toRem(8);
-    margin-top: toRem(40);
-
-    @media (max-width: $tablet) {
-      justify-content: center;
-      margin-top: toRem(32);
-    }
-  }
-
-  &__bullet {
-    display: inline-block;
-    background-color: $grey;
-    width: toRem(20);
-    height: toRem(20);
-    border-radius: 50%;
-    transition: opacity $transition;
-    cursor: pointer;
-
-    @media (any-hover: hover) {
-      &:hover:not(&-active) {
-        opacity: 0.8;
-      }
-    }
-
-    @media (max-width: $mobile) {
-      width: toRem(16);
-      height: toRem(16);
-    }
-
-    &-active {
-      background-color: $accent;
-    }
   }
 }

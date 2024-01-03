@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Pagination, EffectFade, Autoplay } from 'swiper/modules';
-import { filename } from 'pathe/utils';
 
 import { type ISlide } from '../types';
 import { SLIDERS } from '../sliders';
@@ -14,20 +13,15 @@ import {
   LongArrowIcon,
 } from '@/shared/ui';
 
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 const sliders = ref<ISlide[]>(SLIDERS);
 const slider = ref<any>(null);
 const modules = [Pagination, EffectFade, Autoplay];
-const glob = import.meta.glob('../images/*.png', { eager: true });
-const images = Object.fromEntries(
-  Object.entries(glob).map(([key, value]: any[]) => [
-    filename(key),
-    value.default,
-  ])
-);
 
 const onSwiper = (swiper: any) => {
   slider.value = swiper;
-  console.log(slider.value);
 };
 </script>
 
@@ -39,9 +33,16 @@ const onSwiper = (swiper: any) => {
       </div>
       <div class="sliders__wrapper">
         <Swiper
+          @swiper="onSwiper"
+          :modules="modules"
+          class="swiper"
+          loop
           :slides-per-view="1"
           :space-between="12"
-          loop
+          :effect="'fade'"
+          :fadeEffect="{
+            crossFade: true,
+          }"
           :pagination="{
             clickable: true,
             modifierClass: 'sliders__',
@@ -51,33 +52,39 @@ const onSwiper = (swiper: any) => {
               return `<button class='${className}' type='button' />`;
             },
           }"
-          :modules="modules"
-          @swiper="onSwiper"
-          class="swiper"
-          :effect="'fade'"
-          :fadeEffect="{
-            crossFade: true,
-          }"
           :speed="800"
-          :autoplay="{
-            delay: 10000,
-            disableOnInteraction: true,
-          }"
           autoHeight
         >
           <SwiperSlide v-for="(slide, index) in sliders" :key="index">
             <div class="slide">
               <div class="slide__image">
-                <img :src="images[`${slide.imageUrl}`]" alt="Slide Image" />
+                <img :src="slide.imageUrl" alt="Slide Image" />
               </div>
               <div class="slide__block">
                 <div class="slide__header">
                   <h3 class="slide__title">
                     {{ slide.title.text }}<b>{{ slide.title.strong }}</b>
                   </h3>
-                  <p class="slide__subtitle">{{ slide.subtitle }}</p>
+                  <div class="slide__box">
+                    <p class="slide__subtitle">{{ slide.subtitle }}</p>
+                    <div class="slide__buttons">
+                      <button
+                        class="slide__button slide__button-prev"
+                        @click.stop="slider?.slidePrev()"
+                        type="button"
+                      >
+                        <LongArrowIcon />
+                      </button>
+                      <button
+                        class="slide__button slide__button-next"
+                        @click.stop="slider?.slideNext()"
+                        type="button"
+                      >
+                        <LongArrowIcon />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <!-- You can also loop through slide items if needed -->
                 <ul class="slide__items">
                   <li v-for="(item, index) in slide.items" :key="index">
                     <BaseAnimation
@@ -96,23 +103,6 @@ const onSwiper = (swiper: any) => {
               </div>
             </div>
           </SwiperSlide>
-
-          <div class="sliders__buttons">
-            <button
-              class="sliders__button sliders__button-prev"
-              @click.stop="slider?.slidePrev()"
-              type="button"
-            >
-              <LongArrowIcon />
-            </button>
-            <button
-              class="sliders__button sliders__button-next"
-              @click.stop="slider?.slideNext()"
-              type="button"
-            >
-              <LongArrowIcon />
-            </button>
-          </div>
         </Swiper>
       </div>
     </BaseContainer>
@@ -133,53 +123,6 @@ const onSwiper = (swiper: any) => {
 
     @media (max-width: $mobile) {
       margin-top: toRem(40);
-    }
-  }
-
-  &__buttons {
-    @include flexRow(center);
-    column-gap: toRem(16);
-    position: absolute;
-    right: 0;
-    top: toRem(50);
-    z-index: $zIndex_1;
-
-    @media (max-width: $tablet) {
-      @include adaptiveValue('right', 104, 0, 991, 788, 1);
-      @include adaptiveValue('top', 748, 728, 788, 767, 1);
-    }
-
-    @media (max-width: $mobile) {
-      @include adaptiveValue('top', 715, 350, 767, 375, 1);
-      column-gap: toRem(12);
-    }
-  }
-
-  &__button {
-    @include flexRow(center, center);
-    width: toRem(40);
-    height: toRem(40);
-    border-radius: 50%;
-    transition: filter $transition;
-
-    @media (any-hover: hover) {
-      &:hover {
-        filter: brightness(1.05);
-      }
-    }
-
-    &-prev {
-      background-color: $accent_light;
-      color: $accent;
-
-      & svg {
-        transform: scale(-1, 1);
-      }
-    }
-
-    &-next {
-      background-color: $accent;
-      color: $white;
     }
   }
 }
@@ -241,11 +184,49 @@ const onSwiper = (swiper: any) => {
     }
   }
 
-  &__subtitle {
+  &__box {
+    @include flexRow(center, space-between);
+    column-gap: toRem(16);
     margin-top: toRem(16);
+  }
+
+  &__subtitle {
     font-weight: 600;
     font-size: toRem(18);
     line-height: 150%; /* 27/18 */
+  }
+
+  &__buttons {
+    @include flexRow(center);
+    column-gap: toRem(16);
+  }
+
+  &__button {
+    @include flexRow(center, center);
+    width: toRem(40);
+    height: toRem(40);
+    border-radius: 50%;
+    transition: filter $transition;
+
+    @media (any-hover: hover) {
+      &:hover {
+        filter: brightness(1.05);
+      }
+    }
+
+    &-prev {
+      background-color: $accent_light;
+      color: $accent;
+
+      & svg {
+        transform: scale(-1, 1);
+      }
+    }
+
+    &-next {
+      background-color: $accent;
+      color: $white;
+    }
   }
 
   &__items {
@@ -285,6 +266,48 @@ const onSwiper = (swiper: any) => {
       @media (max-width: $mobile) {
         font-size: toRem(14);
       }
+    }
+  }
+}
+</style>
+
+<style lang="scss">
+@import 'src/app/assets/styles/variables.scss';
+
+.sliders {
+  &__bullets {
+    @include flexRow(center, flex-end);
+    column-gap: toRem(8);
+    margin-top: toRem(40);
+
+    @media (max-width: $tablet) {
+      justify-content: center;
+      margin-top: toRem(32);
+    }
+  }
+
+  &__bullet {
+    display: inline-block;
+    background-color: $grey;
+    width: toRem(20);
+    height: toRem(20);
+    border-radius: 50%;
+    transition: opacity $transition;
+    cursor: pointer;
+
+    @media (any-hover: hover) {
+      &:hover:not(&-active) {
+        opacity: 0.8;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      width: toRem(16);
+      height: toRem(16);
+    }
+
+    &-active {
+      background-color: $accent;
     }
   }
 }

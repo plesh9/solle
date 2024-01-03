@@ -1,11 +1,19 @@
-export const SLIDERS = [
+import { type ISlide } from '../types';
+
+import Slide_1 from '../images/slide-1.png';
+import Slide_2 from '../images/slide-2.png';
+import Slide_3 from '../images/slide-3.png';
+import Slide_4 from '../images/slide-4.png';
+import Slide_5 from '../images/slide-5.png';
+
+export const SLIDERS: ISlide[] = [
   {
     title: {
       text: 'Solle',
       strong: 'Vital®',
     },
     subtitle: 'Daily detox + nutrition',
-    imageUrl: 'slide-1',
+    imageUrl: Slide_1,
     items: [
       {
         title: 'Detoxing',
@@ -36,7 +44,7 @@ export const SLIDERS = [
       strong: 'ReNue®',
     },
     subtitle: 'Daily detox + nutrition',
-    imageUrl: 'slide-2',
+    imageUrl: Slide_2,
     items: [
       {
         title: 'Stress relief',
@@ -67,7 +75,7 @@ export const SLIDERS = [
       strong: 'Excell®',
     },
     subtitle: 'Daily detox + nutrition',
-    imageUrl: 'slide-3',
+    imageUrl: Slide_3,
     items: [
       {
         title: 'Libido + endocrine support',
@@ -102,7 +110,7 @@ export const SLIDERS = [
       strong: 'Mâte®',
     },
     subtitle: 'Energy + focus',
-    imageUrl: 'slide-4',
+    imageUrl: Slide_4,
     items: [
       {
         title: 'Blood sugar',
@@ -137,7 +145,7 @@ export const SLIDERS = [
       strong: 'Royal®',
     },
     subtitle: 'Collagen Couture',
-    imageUrl: 'slide-5',
+    imageUrl: Slide_5,
     items: [
       {
         title: 'Hair, skin + nails',

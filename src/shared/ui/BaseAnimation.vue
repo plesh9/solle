@@ -2,11 +2,12 @@
 import { ref } from 'vue';
 import { type MotionVariants, useMotion } from '@vueuse/motion';
 
-interface IAnimation {
-  delay: number;
-  duration: number;
+export interface IAnimation {
+  delay?: number;
+  duration?: number;
   variant?: 'slideDown' | 'slideLeft';
   visible?: 'visibleOnce' | 'visible' | 'enter';
+  options?: MotionVariants;
 }
 
 const props = withDefaults(defineProps<IAnimation>(), {
@@ -35,7 +36,7 @@ const slideDown: MotionVariants = {
   },
 };
 
-const slideLeft = {
+const slideLeft: MotionVariants = {
   initial: {
     opacity: 0,
     x: -50,
@@ -52,7 +53,7 @@ const variants = {
   slideLeft,
 };
 
-useMotion(targetRef, variants[props.variant]);
+useMotion(targetRef, props.options || variants[props.variant]);
 </script>
 
 <template>
@@ -60,5 +61,3 @@ useMotion(targetRef, variants[props.variant]);
     <slot />
   </div>
 </template>
-
-<style lang="scss" scoped></style>

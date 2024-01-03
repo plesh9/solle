@@ -3,7 +3,7 @@
 <template>
   <a href="#" class="logo">
     <img
-      src="@/app/assets/images/icons/logo.png"
+      src="@/app/assets/images/icons/logo.svg"
       class="logo__image"
       alt="logo"
     />

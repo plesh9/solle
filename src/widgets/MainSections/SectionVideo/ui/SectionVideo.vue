@@ -1,26 +1,37 @@
 <script lang="ts" setup>
-import { BaseContainer, BaseAnimation } from '@/shared/ui';
+import { BaseContainer } from '@/shared/ui';
 import DesctopVideo from './DesctopVideo.vue';
 import MobileVideo from './MobileVideo.vue';
+import VideoCards from './VideoCards.vue';
+
+import MobileWave from '../images/wave-mobile.png';
+import Wave from '../images/wave.png';
 </script>
 
 <template>
   <section class="preview">
     <div class="preview__wave">
-      <img class="desctop" src="../images/wave.png" alt="wave" />
-      <img class="mobile" src="../images/wave-mobile.png" alt="wave" />
+      <img class="desctop" :src="Wave" alt="wave" />
+      <img class="mobile" :src="MobileWave" alt="wave" />
     </div>
     <div class="preview__wrapper">
       <BaseContainer>
-        <div class="preview__header">
-          <h3 class="preview__title">Not your typical wellness company</h3>
-        </div>
-        <div class="player">
-          <DesctopVideo class="player__desctop" />
-          <MobileVideo class="player__mobile" />
+        <div class="preview__content">
+          <div class="preview__header">
+            <h3 class="preview__title">Not your typical wellness company</h3>
+          </div>
+          <div class="player">
+            <vue-plyr>
+              <div
+                data-plyr-provider="youtube"
+                data-plyr-embed-id="KKg5mLqfNMk"
+              ></div>
+            </vue-plyr>
+          </div>
         </div>
       </BaseContainer>
     </div>
+    <VideoCards />
   </section>
 </template>
 
@@ -28,6 +39,9 @@ import MobileVideo from './MobileVideo.vue';
 @import 'src/app/assets/styles/variables.scss';
 
 .preview {
+  position: relative;
+  overflow: hidden;
+
   &__wave {
     position: relative;
     width: 100%;
@@ -70,18 +84,19 @@ import MobileVideo from './MobileVideo.vue';
       left: 0;
       top: 0;
       width: 100%;
-      height: toRem(579);
+      height: 80%;
       background-color: $accent;
-
-      @media (max-width: em(1213)) {
-        aspect-ratio: 1.8 / 1;
-        height: auto;
-      }
+      z-index: $zIndex_1;
 
       @media (max-width: $mobile) {
-        aspect-ratio: 375 / 375;
+        height: 90%;
       }
     }
+  }
+
+  &__content {
+    position: relative;
+    z-index: $zIndex_1;
   }
 
   &__header {
@@ -94,8 +109,7 @@ import MobileVideo from './MobileVideo.vue';
   &__title {
     @include adaptiveValue('font-size', 60, 24, 991, 375, 1);
     font-weight: 700;
-    line-height: 150%; /* 90/60 */
-    color: #fff;
+    color: $white;
   }
 }
 .player {
@@ -114,23 +128,5 @@ import MobileVideo from './MobileVideo.vue';
   @media (max-width: $mobileSmall) {
     aspect-ratio: 1 / 1;
   }
-
-  &__desctop {
-    height: 100%;
-    @media (max-width: $mobile) {
-      display: none;
-    }
-  }
-
-  &__mobile {
-    height: 100%;
-    @media (min-width: $mobile) {
-      display: none;
-    }
-  }
-}
-
-:global(body .plyr__poster) {
-  background-size: 110%;
 }
 </style>

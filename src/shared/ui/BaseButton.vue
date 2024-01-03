@@ -44,5 +44,15 @@ withDefaults(defineProps<IButton>(), {
       }
     }
   }
+
+  &.secondary {
+    background-color: $white;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $grey_light;
+      }
+    }
+  }
 }
 </style>

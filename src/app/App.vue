@@ -4,9 +4,9 @@ import {
   SectionPreview,
   SectionSliders,
   SectionVideo,
+  SectionAdaptogens,
+  SectionComments,
 } from '@/widgets/MainSections';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
 </script>
 
 <template>
@@ -16,9 +16,8 @@ import 'swiper/css/effect-fade';
       <SectionPreview />
       <SectionSliders />
       <SectionVideo />
-      <section />
+      <SectionAdaptogens />
+      <SectionComments />
     </main>
   </div>
 </template>
-
-<style scoped lang="scss"></style>

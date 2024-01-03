@@ -1,5 +1,7 @@
 <script lang="ts" setup>
+import { isMobile } from '@/shared/lib';
 import { BaseContainer, BaseButton, BaseAnimation } from '@/shared/ui';
+import Preview from '../images/preview.png';
 
 const price = '37.95';
 const linkToProduct =
@@ -27,7 +29,7 @@ const linkToProduct =
           </BaseAnimation>
           <BaseAnimation :delay="700">
             <div class="preview__info">
-              <div class="preview__info_pc">
+              <div class="preview__info_pc" v-if="!isMobile">
                 <BaseButton as="a" :href="linkToProduct" class="sad"
                   >Buy Now</BaseButton
                 >
@@ -36,7 +38,8 @@ const linkToProduct =
               <BaseButton
                 as="a"
                 :href="linkToProduct"
-                class="preview__button-tablet"
+                class="preview__button"
+                v-if="isMobile"
               >
                 Buy Now $ {{ price }}
               </BaseButton>
@@ -44,7 +47,7 @@ const linkToProduct =
           </BaseAnimation>
         </div>
         <div class="preview__image">
-          <img src="../images/preview.png" alt="preview" />
+          <img :src="Preview" alt="preview" />
         </div>
       </div>
     </BaseContainer>
@@ -81,25 +84,14 @@ const linkToProduct =
     }
 
     &_pc {
-      display: none;
-      @media (min-width: $tablet) {
-        @include flexRow(center);
-        column-gap: toRem(38);
-      }
+      @include flexRow(center);
+      column-gap: toRem(38);
     }
   }
 
   &__block {
     @media (max-width: $mobile) {
       text-align: center;
-    }
-  }
-
-  &__button {
-    &-tablet {
-      @media (min-width: $tablet) {
-        display: none;
-      }
     }
   }
 
