@@ -1,7 +1,10 @@
 <script lang="ts" setup>
-import { isMobile } from '@/shared/lib';
+import { isMobile, isTablet } from '@/shared/lib';
 import { BaseContainer, BaseButton, BaseAnimation } from '@/shared/ui';
 import Preview from '../images/preview.png';
+import { useMyI18n } from '@/app/i18n/hooks';
+
+const { t } = useMyI18n('HomePage.Preview');
 
 const price = '37.95';
 const linkToProduct =
@@ -14,41 +17,42 @@ const linkToProduct =
       <div class="preview__wrapper">
         <div class="preview__block">
           <BaseAnimation :delay="300">
-            <h1>Variety Trial Box</h1>
+            <h1>{{ t('title') }}</h1>
+          </BaseAnimation>
+          <BaseAnimation :delay="400" v-if="isTablet">
+            <div class="preview__image">
+              <img :src="Preview" alt="preview" />
+            </div>
           </BaseAnimation>
           <BaseAnimation :delay="500">
             <p class="main-subtitle">
-              This box is a great way to dip your toes into the world of
-              adaptogens before diving into a complete health program! The
-              Variety Trial Box contains three individual servings of each of
-              our five, best-selling adaptogenic drinks. It will give you the
-              chance to experiment with each and figure out which serving method
-              best suits you, as well as get a taste for what these powerful and
-              potent formulas can add to your well-being.
+              {{ t('subtitle') }}
             </p>
           </BaseAnimation>
           <BaseAnimation :delay="700">
             <div class="preview__info">
-              <div class="preview__info_pc" v-if="!isMobile">
-                <BaseButton as="a" :href="linkToProduct" class="sad"
-                  >Buy Now</BaseButton
-                >
+              <div class="preview__info_pc" v-if="!isTablet">
+                <BaseButton as="a" :href="linkToProduct">
+                  {{ t('buy') }}
+                </BaseButton>
                 <span class="preview__price">$ {{ price }}</span>
               </div>
               <BaseButton
                 as="a"
                 :href="linkToProduct"
                 class="preview__button"
-                v-if="isMobile"
+                v-if="isTablet"
               >
-                Buy Now $ {{ price }}
+                {{ t('buy') }} $ {{ price }}
               </BaseButton>
             </div>
           </BaseAnimation>
         </div>
-        <div class="preview__image">
-          <img :src="Preview" alt="preview" />
-        </div>
+        <BaseAnimation :delay="300" variant="opacity" v-if="!isTablet">
+          <div class="preview__image">
+            <img :src="Preview" alt="preview" />
+          </div>
+        </BaseAnimation>
       </div>
     </BaseContainer>
   </section>
@@ -90,7 +94,7 @@ const linkToProduct =
   }
 
   &__block {
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       text-align: center;
     }
   }
@@ -103,7 +107,7 @@ const linkToProduct =
     text-align: center;
 
     @media (max-width: $tablet) {
-      margin-top: toRem(48);
+      margin-top: toRem(24);
     }
 
     & img {

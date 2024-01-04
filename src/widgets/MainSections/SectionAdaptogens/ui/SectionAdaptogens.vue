@@ -1,6 +1,9 @@
 <script lang="ts" setup>
+import { useMyI18n } from '@/app/i18n/hooks';
 import { BaseContainer, BaseButton, BaseAnimation } from '@/shared/ui';
 import Background from '../images/bg.jpg';
+
+const { t } = useMyI18n('HomePage.Adaptogens');
 </script>
 
 <template>
@@ -11,9 +14,7 @@ import Background from '../images/bg.jpg';
     <BaseContainer class="adaptogens__container">
       <div class="adaptogens__content">
         <BaseAnimation :delay="200">
-          <h3 class="adaptogens__title">
-            Dip your toes into the world of adaptogens
-          </h3>
+          <h3 class="adaptogens__title">{{ t('title') }}</h3>
         </BaseAnimation>
         <BaseAnimation :delay="400">
           <BaseButton
@@ -22,7 +23,7 @@ import Background from '../images/bg.jpg';
             href="https://www.sollenaturals.com/product/1094?country=US&lang=en&sngl=AJ47BJ&uli=0"
             class="adaptogens__button"
           >
-            Buy Now
+            {{ t('buy') }}
           </BaseButton>
         </BaseAnimation>
       </div>
@@ -38,6 +39,10 @@ import Background from '../images/bg.jpg';
   position: relative;
   width: 100%;
   height: min(100vh, toRem(683));
+
+  @media (max-width: $mobile) {
+    height: min(100vh, toRem(375));
+  }
 
   &__bg {
     &::after {

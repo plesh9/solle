@@ -4,6 +4,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 
 import { BaseContainer, BaseRating } from '@/shared/ui';
 import Background from '../images/commnet-bg.png';
+import { useMyI18n } from '@/app/i18n/hooks';
 
 interface IComment {
   text: string;
@@ -11,25 +12,32 @@ interface IComment {
   rating: number;
 }
 
+const { t } = useMyI18n('HomePage.Comments');
+
 const COMMENTS: IComment[] = [
   {
-    text: `I have been taking Solle Naturals products for 5 ½ years. It’s really a challenge to put all the goodness of the products in a quick review, because there are so many benefits. Everything is better for me….from better digestion, better mood, more energy, calmer mind, better response to stress, just to name a few. I can honestly say that I would never want to be without Solle Naturals products.`,
+    text: `comment_1`,
     name: 'Tanya Johnson',
     rating: 5,
   },
   {
-    text: `Solle products have given me my life back. Before Solle Naturals was part of my health journey I was exhausted and anxious all the time. My digestion was completely messed up and stress levels were an all time high. Now I can manage stress and oncoming panic attacks with ease, I have energy to conquer all of my tasks and I don’t suffer from daily anxiety.`,
+    text: `comment_2`,
     name: 'Sara B',
     rating: 5,
   },
   {
-    text: `Solle Naturals have helped me in so many ways.. I no longer need a cup of coffee to wake up or a glass of wine to fall asleep..I worry less and accomplish more..my hair and nails and stronger and longer my hormones are now in balance. I am happier and healthier because of making these small changes.`,
+    text: `comment_3`,
     name: 'Karen S',
     rating: 5,
   },
   {
-    text: `I have been taking Solle Naturals products for 5 ½ years. It’s really a challenge to put all the goodness of the products in a quick review, because there are so many benefits. Everything is better for me….from better digestion, better mood, more energy, calmer mind, better response to stress, just to name a few. I can honestly say that I would never want to be without Solle Naturals products.`,
-    name: 'Tanya Johnson',
+    text: `comment_4`,
+    name: 'Laura U',
+    rating: 5,
+  },
+  {
+    text: `comment_5`,
+    name: 'Mary G',
     rating: 5,
   },
 ];
@@ -38,7 +46,9 @@ const COMMENTS: IComment[] = [
 <template>
   <section class="comments">
     <BaseContainer>
-      <div class="comments__header"><h2>What people are saying</h2></div>
+      <div class="comments__header">
+        <h2>{{ t('title') }}</h2>
+      </div>
       <div class="comments__content">
         <Swiper
           class="comments__swiper"
@@ -74,7 +84,7 @@ const COMMENTS: IComment[] = [
           <SwiperSlide v-for="(comment, index) in COMMENTS" :key="index">
             <div class="comment">
               <div class="comment__body">
-                <p class="comment__text">{{ comment.text }}</p>
+                <p class="comment__text">{{ t(comment.text) }}</p>
               </div>
               <div class="comment__footer">
                 <p class="comment__name">{{ comment.name }}</p>
@@ -119,8 +129,8 @@ const COMMENTS: IComment[] = [
 
   &__swiper {
     @media (max-width: em($maxWidthContainer)) {
-      margin: 0 toRem(-$paddingContainer);
-      padding: toRem(4) toRem($paddingContainer);
+      margin: 0 $paddingContainerMinus;
+      padding: toRem(4) $paddingContainer;
     }
   }
 }

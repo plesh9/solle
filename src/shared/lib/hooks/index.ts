@@ -1,1 +1,1 @@
-export { isMobile, useMedia } from './media';
+export { isMobile, isTablet, useMedia } from './media';

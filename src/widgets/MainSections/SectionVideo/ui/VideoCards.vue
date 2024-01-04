@@ -12,43 +12,46 @@ import HeavyMetals from '../images/heavy-metals.png';
 
 import TopLeaf from '../images/top-leaf.png';
 import BottomLeaf from '../images/bottom-leaf.png';
+import { useMyI18n } from '@/app/i18n/hooks';
 
 interface ICard {
   title: string;
   image: string;
 }
 
+const { t } = useMyI18n('HomePage.Video');
+
 const CARDS: ICard[] = [
   {
-    title: 'Vegetarian',
+    title: 'vegetarian',
     image: Vegetarian,
   },
   {
-    title: 'Gluten-free',
+    title: 'glutenFree',
     image: GlutenFree,
   },
   {
-    title: 'Soy-free',
+    title: 'soyFree',
     image: SoyFree,
   },
   {
-    title: 'Non-GMO',
+    title: 'nonGmo',
     image: NonGmo,
   },
   {
-    title: 'No fillers or artificial ingredients',
+    title: 'noFillers',
     image: NoFillers,
   },
   {
-    title: 'MSG-free',
+    title: 'MsgFree',
     image: MsgFree,
   },
   {
-    title: 'Nut-free',
+    title: 'nutFree',
     image: NutFree,
   },
   {
-    title: 'Free of heavy metals',
+    title: 'heavyMetals',
     image: HeavyMetals,
   },
 ];
@@ -69,7 +72,7 @@ const CARDS: ICard[] = [
               <div class="card__image">
                 <img :src="card.image" :alt="card.title" />
               </div>
-              <p class="card__title">{{ card.title }}</p>
+              <p class="card__title">{{ t(card.title) }}</p>
             </div>
           </li>
         </ul>

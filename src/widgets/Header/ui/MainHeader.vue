@@ -29,7 +29,7 @@ defineProps<HeaderProps>();
   top: 0;
   width: 100%;
   background-color: $white;
-  padding: toRem(23) 0;
+  padding: toRem(16) 0;
   box-shadow: $box_shadow;
   z-index: $zIndex_50;
 

@@ -1,11 +1,8 @@
-export enum EnumLanguage {
-  en = 'en',
-  es = 'es',
-}
+import { EnumLanguages } from '@/app/i18n';
 
 export interface ILanguageSelectorItem {
   text: string;
-  value: EnumLanguage;
+  value: EnumLanguages;
 }
 
 export interface ILanguageSelectorOption {

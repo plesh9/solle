@@ -1,0 +1,107 @@
+{
+  "Header": {
+    "language": "Language"
+  },
+  "HomePage": {
+    "Preview": {
+      "title": "Variety Trial Box",
+      "subtitle": "This box is a great way to dip your toes into the world of adaptogens before diving into a complete health program! The Variety Trial Box contains three individual servings of each of our five, best-selling adaptogenic drinks. It will give you the chance to experiment with each and figure out which serving method best suits you, as well as get a taste for what these powerful and potent formulas can add to your well-being.",
+      "buy": "Buy Now"
+    },
+    "Slider": {
+      "title": "See What's Inside",
+      "SolleVital": {
+        "subtitle": "Daily detox + nutrition",
+        "detoxing": "Detoxing",
+        "detoxing_text": "Chlorophyll naturally aids the body in eliminating toxins",
+        "mood": "Mood",
+        "mood_text": "Six adaptogens help balance and elevate mood",
+        "stamina": "Stamina",
+        "stamina_text": "Adaptogens help the body maintain energy levels throughout the day",
+        "athletic": "Athletic recovery",
+        "athletic_text": "Trace minerals restore necessary minerals and help oxygenate the blood",
+        "alkalizing": "Alkalizing",
+        "alkalizing_text": "Chlorophyll helps balance pH levels in the body, which reduces acidity and promotes a feeling of overall wellness"
+      },
+      "SolleReNue": {
+        "subtitle": "Daily detox + nutrition",
+        "stressRelief": "Stress Relief",
+        "stressRelief_text": "Contains adaptogens and other calming herbs to support a calm central nervous system.",
+        "naturalSleepSupport": "Natural Sleep Support",
+        "naturalSleepSupport_text": "Helps relax body and mind in order to prepare for a more restful sleep",
+        "recovery": "Recovery",
+        "recovery_text": "Helps the body promote natural restoration processes for muscle and immune recovery",
+        "liverHealth": "Liver Health",
+        "liverHealth_text": "Wood betony and schizandra support the liver and promote healthy functioning",
+        "calmFocus": "Calm Focus",
+        "calmFocus_text": "Promotes calmness of body and mind, allowing you to re-center yourself and focus on the task ahead."
+      },
+      "SolleExcell": {
+        "subtitle": "Daily detox + nutrition",
+        "libidoEndocrineSupport": "Libido + endocrine support",
+        "libidoEndocrineSupport_text": "Three types of maca help support the entire endocrine system which helps support memory, libido, mood, prostate health and reproductive and skin health",
+        "enhancedAlertness": "Enhanced alertness",
+        "enhancedAlertness_text": "Contains naturally-occurring theacrine which supports locomotor skills",
+        "stressSupport": "Stress support",
+        "stressSupport_text": "Provides beneficial antioxidants and amino acids to help protect the body from daily, emotional and environmental stresses",
+        "healthyBones": "Healthy bones",
+        "healthyBones_text": "Red maca has been traditionally known for having a positive effect on the body’s ability to maintain strong bones",
+        "respiratoryCirculatorySupport": "Respiratory + circulatory support",
+        "respiratoryCirculatorySupport_text": "Contains clarifying herbs to help keep sinus, respiratory and circulatory systems clear",
+        "immuneHealth": "Immune health",
+        "immuneHealth_text": "Cupuaçu is high in vitamin C, providing your body with what it needs to support your immune system"
+      },
+      "CinnaMate": {
+        "subtitle": "Energy + focus",
+        "bloodSugar": "Blood sugar",
+        "bloodSugar_text": "Cinnamon, nopal and banaba leaf help the body maintain normal-range blood sugar levels",
+        "cravingControl": "Craving control",
+        "cravingControl_text": "Yerba mate contains 24 vitamins and minerals and 15 amino acids to help give your body what it needs to fight cravings",
+        "cleanEnergy": "Clean energy",
+        "cleanEnergy_text": "Adaptogens and a balanced form of naturally occurring caffeine from yerba mate help increase stamina throughout the day, without jitters",
+        "gutHealth": "Gut health",
+        "gutHealth_text": "Provides digestive energy and helps promote regularity",
+        "immuneHealth": "Immune health",
+        "immuneHealth_text": "Anti-microbial and anti-viral properties in yerba mate and thyme help support the natural blood-cleansing functions of the body and promote a strong immune response",
+        "mentalFocus": "Mental focus",
+        "mentalFocus_text": "Yerba mate, nopal, and cinnamon are all recognized for their ability to help boost mental focus"
+      },
+      "SolleRoyal": {
+        "subtitle": "Collagen Couture",
+        "hairSkinNails": "Hair, skin + nails",
+        "hairSkinNails_text": "Helps promote the health and strength of hair, skin and nails",
+        "bonesConnectiveTissues": "Bones + connective tissues",
+        "bonesConnectiveTissues_text": "Various types of collagen are used to strengthen bones and support healthy tendons, ligaments and joints",
+        "stressSupport": "Stress support",
+        "stressSupport_text": "Moringa and butterfly pea help enhance the body’s ability to manage stress",
+        "immunity": "Immunity",
+        "immunity_text": "Includes a variety of dense nutrition, including vitamin C, to support a healthy immune system",
+        "weightManagement": "Weight management",
+        "weightManagement_text": "Contains 9 grams of protein and less than 1 gram of sugar per serving"
+      }
+    },
+    "Video": {
+      "title": "Not your typical wellness company",
+      "vegetarian": "Vegetarian",
+      "glutenFree": "Gluten-free",
+      "soyFree": "Soy-free",
+      "nonGmo": "Non-GMO",
+      "noFillers": "No fillers or artificial ingredients",
+      "MsgFree": "MSG-free",
+      "nutFree": "Nut-free",
+      "heavyMetals": "Free of heavy metals"
+    },
+    "Adaptogens": {
+      "title": "Dip your toes into the world of adaptogens",
+      "buy": "Buy Now"
+    },
+    "Comments": {
+      "title": "What people are saying",
+      "comment_1": "I have been taking Solle Naturals products for 5 ½ years. It’s really a challenge to put all the goodness of the products in a quick review, because there are so many benefits. Everything is better for me….from better digestion, better mood, more energy, calmer mind, better response to stress, just to name a few. I can honestly say that I would never want to be without Solle Naturals products.",
+      "comment_2": "Solle products have given me my life back. Before Solle Naturals was part of my health journey I was exhausted and anxious all the time. My digestion was completely messed up and stress levels were an all time high. Now I can manage stress and oncoming panic attacks with ease, I have energy to conquer all of my tasks and I don’t suffer from daily anxiety.",
+      "comment_3": "Solle Naturals have helped me in so many ways.. I no longer need a cup of coffee to wake up or a glass of wine to fall asleep..I worry less and accomplish more..my hair and nails and stronger and longer my hormones are now in balance. I am happier and healthier because of making these small changes.",
+      "comment_4": "I am a busy mom of 3 kids and of course deal with weight gain, lack of energy, intermittent sleep patterns, stress, you name it as a mom. However, I’d been lacking in caring for myself. Since beginning Solle, I no longer crave coffee and have supplemented it for my coffee. I also find myself having more energy without a 3pm crash. All the way around I’ve been quite pleased with what I’ve tried.",
+      "comment_5": "With Solle, I have more energy, less pain, and a handle on anxiety/stress...a must for helping me get through stressful days."
+    }
+  }
+}

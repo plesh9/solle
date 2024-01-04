@@ -15,6 +15,9 @@ import {
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import { useMyI18n } from '@/app/i18n/hooks';
+
+const { t } = useMyI18n('HomePage.Slider');
 
 const sliders = ref<ISlide[]>(SLIDERS);
 const slider = ref<any>(null);
@@ -29,7 +32,7 @@ const onSwiper = (swiper: any) => {
   <section class="sliders">
     <BaseContainer>
       <div class="sliders__header">
-        <h2>See What's Inside</h2>
+        <h2>{{ t('title') }}</h2>
       </div>
       <div class="sliders__wrapper">
         <Swiper
@@ -66,7 +69,9 @@ const onSwiper = (swiper: any) => {
                     {{ slide.title.text }}<b>{{ slide.title.strong }}</b>
                   </h3>
                   <div class="slide__box">
-                    <p class="slide__subtitle">{{ slide.subtitle }}</p>
+                    <p class="slide__subtitle">
+                      {{ t(`${slide.key}.${slide.subtitle}`) }}
+                    </p>
                     <div class="slide__buttons">
                       <button
                         class="slide__button slide__button-prev"
@@ -94,7 +99,9 @@ const onSwiper = (swiper: any) => {
                       <div class="slide__item">
                         <div><CheckMarkIcon /></div>
                         <p>
-                          <strong>{{ item.title }}</strong> - {{ item.text }}
+                          <strong>{{ t(`${slide.key}.${item.title}`) }}</strong>
+                          -
+                          {{ t(`${slide.key}.${item.text}`) }}
                         </p>
                       </div>
                     </BaseAnimation>
@@ -172,7 +179,7 @@ const onSwiper = (swiper: any) => {
     line-height: 150%; /* 42/28 */
 
     @media (max-width: $mobile) {
-      font-size: toRem(20);
+      font-size: toRem(24);
     }
 
     @media (max-width: $mobile) {

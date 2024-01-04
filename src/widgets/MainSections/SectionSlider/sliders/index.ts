@@ -1,171 +1,182 @@
 import { type ISlide } from '../types';
 
-import Slide_1 from '../images/slide-1.png';
-import Slide_2 from '../images/slide-2.png';
-import Slide_3 from '../images/slide-3.png';
-import Slide_4 from '../images/slide-4.png';
-import Slide_5 from '../images/slide-5.png';
+// import Slide_1 from '../images/slide-1.png';
+// import Slide_2 from '../images/slide-2.png';
+// import Slide_3 from '../images/slide-3.png';
+// import Slide_4 from '../images/slide-4.png';
+// import Slide_5 from '../images/slide-5.png';
+
+import Slide_1 from '../images/slide-01.png';
+import Slide_2 from '../images/slide-02.png';
+import Slide_3 from '../images/slide-03.png';
+import Slide_4 from '../images/slide-04.png';
+import Slide_5 from '../images/slide-05.png';
 
 export const SLIDERS: ISlide[] = [
   {
+    key: 'SolleVital',
     title: {
       text: 'Solle',
       strong: 'Vital®',
     },
-    subtitle: 'Daily detox + nutrition',
+    subtitle: 'subtitle',
     imageUrl: Slide_1,
     items: [
       {
-        title: 'Detoxing',
-        text: 'Chlorophyll naturally aids the body in eliminating toxins',
+        title: 'detoxing',
+        text: 'detoxing_text',
       },
       {
-        title: 'Mood',
-        text: 'Six adaptogens help balance and elevate mood',
+        title: 'mood',
+        text: 'mood_text',
       },
       {
-        title: 'Stamina',
-        text: 'Adaptogens help the body maintain energy levels throughout the day',
+        title: 'stamina',
+        text: 'stamina_text',
       },
       {
-        title: 'Athletic recovery',
-        text: 'Trace minerals restore necessary minerals and help oxygenate the blood',
+        title: 'athletic',
+        text: 'athletic_text',
       },
       {
-        title: 'Alkalizing',
-        text: 'Chlorophyll helps balance pH levels in the body, which reduces acidity and promotes a feeling of overall wellness',
+        title: 'alkalizing',
+        text: 'alkalizing_text',
       },
     ],
   },
 
   {
+    key: 'SolleReNue',
     title: {
       text: 'Solle',
       strong: 'ReNue®',
     },
-    subtitle: 'Daily detox + nutrition',
+    subtitle: 'subtitle',
     imageUrl: Slide_2,
     items: [
       {
-        title: 'Stress relief',
-        text: 'Contains adaptogens and other calming herbs to support a calm central nervous system.',
+        title: 'stressRelief',
+        text: 'stressRelief_text',
       },
       {
-        title: 'Natural sleep support',
-        text: 'Helps relax body and mind in order to prepare for a more restful sleep',
+        title: 'naturalSleepSupport',
+        text: 'naturalSleepSupport_text',
       },
       {
-        title: 'Recovery',
-        text: 'Helps the body promote natural restoration processes for muscle and immune recovery',
+        title: 'recovery',
+        text: 'recovery_text',
       },
       {
-        title: 'Liver health',
-        text: 'Wood betony and schizandra support the liver and promote healthy functioning',
+        title: 'liverHealth',
+        text: 'liverHealth_text',
       },
       {
-        title: 'Calm focus',
-        text: 'Promotes calmness of body and mind, allowing you to re-center yourself and focus on the task ahead.',
+        title: 'calmFocus',
+        text: 'calmFocus_text',
       },
     ],
   },
 
   {
+    key: 'SolleExcell',
     title: {
       text: 'Solle',
       strong: 'Excell®',
     },
-    subtitle: 'Daily detox + nutrition',
+    subtitle: 'subtitle',
     imageUrl: Slide_3,
     items: [
       {
-        title: 'Libido + endocrine support',
-        text: 'Three types of maca help support the entire endocrine system which helps support memory, libido, mood, prostate health and reproductive and skin health',
+        title: 'libidoEndocrineSupport',
+        text: 'libidoEndocrineSupport_text',
       },
       {
-        title: 'Enhanced alertness',
-        text: 'Contains naturally-occurring theacrine which supports locomotor skills',
+        title: 'enhancedAlertness',
+        text: 'enhancedAlertness_text',
       },
       {
-        title: 'Stress support',
-        text: 'Provides beneficial antioxidants and amino acids to help protect the body from daily, emotional and environmental stresses',
+        title: 'stressSupport',
+        text: 'stressSupport_text',
       },
       {
-        title: 'Healthy bones',
-        text: 'Red maca has been traditionally known for having a positive effect on the body’s ability to maintain strong bones',
+        title: 'healthyBones',
+        text: 'healthyBones_text',
       },
       {
-        title: 'Respiratory + circulatory support',
-        text: 'Contains clarifying herbs to help keep sinus, respiratory and circulatory systems clear',
+        title: 'respiratoryCirculatorySupport',
+        text: 'respiratoryCirculatorySupport_text',
       },
       {
-        title: 'Immune health',
-        text: 'Cupuaçu is high in vitamin C, providing your body with what it needs to support your immune system',
+        title: 'immuneHealth',
+        text: 'immuneHealth_text',
       },
     ],
   },
 
   {
+    key: 'CinnaMate',
     title: {
       text: 'Cinna',
       strong: 'Mâte®',
     },
-    subtitle: 'Energy + focus',
+    subtitle: 'subtitle',
     imageUrl: Slide_4,
     items: [
       {
-        title: 'Blood sugar',
-        text: 'Cinnamon, nopal and banaba leaf help the body maintain normal-range blood sugar levels',
+        title: 'bloodSugar',
+        text: 'bloodSugar_text',
       },
       {
-        title: 'Craving control',
-        text: 'Yerba mate contains 24 vitamins and minerals and 15 amino acids to help give your body what it needs to fight cravings',
+        title: 'cravingControl',
+        text: 'cravingControl_text',
       },
       {
-        title: 'Clean energy',
-        text: 'Adaptogens and a balanced form of naturally occurring caffeine from yerba mate help increase stamina throughout the day, without jitters',
+        title: 'cleanEnergy',
+        text: 'cleanEnergy_text',
       },
       {
-        title: 'Gut health',
-        text: 'Provides digestive energy and helps promote regularity',
+        title: 'gutHealth',
+        text: 'gutHealth_text',
       },
       {
-        title: 'Immune health',
-        text: 'Anti-microbial and anti-viral properties in yerba mate and thyme help support the natural blood-cleansing functions of the body and promote a strong immune response',
+        title: 'immuneHealth',
+        text: 'immuneHealth_text',
       },
       {
-        title: 'Mental focus',
-        text: 'Yerba mate, nopal, and cinnamon are all recognized for their ability to help boost mental focus',
+        title: 'mentalFocus',
+        text: 'mentalFocus_text',
       },
     ],
   },
 
   {
+    key: 'SolleRoyal',
     title: {
       text: 'Solle',
       strong: 'Royal®',
     },
-    subtitle: 'Collagen Couture',
+    subtitle: 'subtitle',
     imageUrl: Slide_5,
     items: [
       {
-        title: 'Hair, skin + nails',
-        text: 'Helps promote the health and strength of hair, skin and nails',
+        title: 'hairSkinNails',
+        text: 'hairSkinNails_text',
       },
       {
-        title: 'Bones + connective tissues',
-        text: 'Various types of collagen are used to strengthen bones and support healthy tendons, ligaments and joints',
+        title: 'bonesConnectiveTissues',
+        text: 'bonesConnectiveTissues_text',
       },
       {
-        title: 'Stress support',
-        text: 'Moringa and butterfly pea help enhance the body’s ability to manage stress',
+        title: 'stressSupport',
+        text: 'stressSupport_text',
       },
       {
-        title: 'Immunity',
-        text: 'Includes a variety of dense nutrition, including vitamin C, to support a healthy immune system',
+        title: 'immunity',
+        text: 'immunity_text',
       },
       {
-        title: 'Weight management',
-        text: 'Contains 9 grams of protein and less than 1 gram of sugar per serving',
+        title: 'weightManagement',
+        text: 'weightManagement_text',
       },
     ],
   },

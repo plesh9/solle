@@ -5,7 +5,7 @@ import { type MotionVariants, useMotion } from '@vueuse/motion';
 export interface IAnimation {
   delay?: number;
   duration?: number;
-  variant?: 'slideDown' | 'slideLeft';
+  variant?: 'slideDown' | 'slideLeft' | 'opacity';
   visible?: 'visibleOnce' | 'visible' | 'enter';
   options?: MotionVariants;
 }
@@ -48,9 +48,20 @@ const slideLeft: MotionVariants = {
   },
 };
 
+const opacity: MotionVariants = {
+  initial: {
+    opacity: 0,
+  },
+  [props.visible]: {
+    opacity: 1,
+    transition,
+  },
+};
+
 const variants = {
   slideDown,
   slideLeft,
+  opacity,
 };
 
 useMotion(targetRef, props.options || variants[props.variant]);

@@ -1,0 +1,107 @@
+{
+  "Header": {
+    "language": "Idioma"
+  },
+  "HomePage": {
+    "Preview": {
+      "title": "Paquete de prueba",
+      "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, rerum. Laborum laudantium deserunt harum quae atque dicta accusamus asperiores quia? Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, rerum. Laborum laudantium deserunt harum quae atque dicta accusamus asperiores quia?",
+      "buy": "Comprar ahora"
+    },
+    "Slider": {
+      "title": "Mira lo que hay dentro",
+      "SolleVital": {
+        "subtitle": "Equilibrio diario + nutrición",
+        "detoxing": "Desintoxica",
+        "detoxing_text": " La clorofila ayuda naturalmente al cuerpo a eliminar toxinas.",
+        "mood": "Estado de ánimo",
+        "mood_text": " Seis adaptógenos que equilibran y elevan el ánimo.",
+        "stamina": "Resistencia",
+        "stamina_text": " Los adaptógenos ayudan al cuerpo a mantener los niveles de energía durante el día.",
+        "athletic": "Recuperación atlética",
+        "athletic_text": " Los minerales traza restauran los minerales del cuerpo y ayudan a oxigenar la sangre.",
+        "alkalizing": "Alcaliniza",
+        "alkalizing_text": "La clorofila equilibra los niveles de pH en el cuerpo, lo cual reduce la acidez y promueve un sentimiento de bienestar general."
+      },
+      "SolleReNue": {
+        "subtitle": "Equilibrio diario + nutrición",
+        "stressRelief": "Alivio del estré",
+        "stressRelief_text": "Contiene adaptógenos y otras hierbas calmantes para tranquilizar el sistema nervioso central.",
+        "naturalSleepSupport": "Apoyo natural para dormir",
+        "naturalSleepSupport_text": "Ayuda a relajar el cuerpo y la mente preparándolos para un sueño más reparador.",
+        "recovery": "Recuperación",
+        "recovery_text": "Ayuda a promover los procesos naturales de restauración y recuperación muscular e inmunológica en el cuerpo",
+        "liverHealth": "Salud del hígado",
+        "liverHealth_text": "La betónica y la schisandra apoyan la salud del hígado y promueven su buen funcionamiento.",
+        "calmFocus": "Enfoque en calma",
+        "calmFocus_text": "Promueve calma de cuerpo y mente, para volver a centrarte y concentrarte en la tarea a realizar."
+      },
+      "SolleExcell": {
+        "subtitle": "Equilibrio diario + nutrición",
+        "libidoEndocrineSupport": "Libido + apoyo endocrino",
+        "libidoEndocrineSupport_text": "Tres tipos de maca que ayudan a respaldar todo el sistema endocrino, dando apoyo a la memoria, la libido, el estado de ánimo, la salud de la próstata y la reproductiva y la salud de la piel.",
+        "enhancedAlertness": "Estado de alerta mejorado",
+        "enhancedAlertness_text": "Contiene teacrina de origen natural que apoya las habilidades locomotoras.",
+        "stressSupport": "Estrés",
+        "stressSupport_text": "Proporciona antioxidantes y aminoácidos beneficiosos para ayudar a proteger el cuerpo del estrés emocional y ambiental diario.",
+        "healthyBones": "Salud ósea",
+        "healthyBones_text": "La maca roja ha sido conocida tradicionalmente por tener un efecto positivo en la capacidad del cuerpo para mantener los huesos fuertes.",
+        "respiratoryCirculatorySupport": "Soporte respiratorio + circulatorio",
+        "respiratoryCirculatorySupport_text": "Contiene hierbas clarificantes que ayudan a mantener limpios los sistemas respiratorio, circulatorio y sinusal.",
+        "immuneHealth": "Inmunidad",
+        "immuneHealth_text": "El cupuaçu tiene un alto contenido de vitamina C, lo que le brinda a su cuerpo lo que necesita para respaldar su sistema inmunológico."
+      },
+      "CinnaMate": {
+        "subtitle": "Energía + concentración",
+        "bloodSugar": "Glucosa",
+        "bloodSugar_text": "Canela, nopal y hoja de banaba que ayudan al cuerpo a mantener normales los niveles del azúcar.",
+        "cravingControl": "Control de antojos",
+        "cravingControl_text": "Yerba mate contiene 24 vitaminas y minerales y 15 aminoácidos que le dan al cuerpo lo que necesita para combatir los antojos",
+        "cleanEnergy": "Energía limpia",
+        "cleanEnergy_text": "Los adaptógenos y la cafeína natural de la yerba mate ayudan a aumentar la resistencia durante el día sin tener altibajos.",
+        "gutHealth": "Salud intestinal",
+        "gutHealth_text": "Provee energía digestiva y ayuda a promover la regularidad.",
+        "immuneHealth": "Salud inmunológica",
+        "immuneHealth_text": "Las propiedades antimicrobianas y anti-virales de la yerba mate y el tomillo ayudan a promover las funciones naturales de limpieza en la sangre así como una fuerte respuesta inmunológica.",
+        "mentalFocus": "Concentración mental",
+        "mentalFocus_text": "La yerba mate, el nopal y la canela son reconocidos por su capacidad para ayudar a mejorar el enfoque mental."
+      },
+      "SolleRoyal": {
+        "subtitle": "Costura de colágeno",
+        "hairSkinNails": "Cabello, piel + uñas",
+        "hairSkinNails_text": "Ayuda a promover la salud y fortaleza del cabello, la piel y las uñas.",
+        "bonesConnectiveTissues": "Huesos + tejido conectivo",
+        "bonesConnectiveTissues_text": "Diferentes tipos de colágeno se utilizan para fortalecer los huesos y apoyar la salud de los tendones, ligamentos y articulaciones.",
+        "stressSupport": "Estrés",
+        "stressSupport_text": "La moringa y la flor campanita aumentan la capacidad del cuerpo para controlar el estrés.",
+        "immunity": "Inmunidad",
+        "immunity_text": "Contiene una variedad de nutrientes densos, incluyendo la vitamina C para apoyar un sistema inmunológico más saludable.",
+        "weightManagement": "Control de peso",
+        "weightManagement_text": "Contiene 9 gramos de proteína y menos de 1 gramo de azúcar por porción."
+      }
+    },
+    "Video": {
+      "title": "No es la típica empresa de wellness",
+      "vegetarian": "Vegetariano",
+      "glutenFree": "Sin-Gluten",
+      "soyFree": "Sin-Soya",
+      "nonGmo": "Sin-OGM",
+      "noFillers": "Sin Aditivos o Ingredientes Artificiales",
+      "MsgFree": "Sin-GMS",
+      "nutFree": "Sin-Nueces",
+      "heavyMetals": "Pruebas por terceros"
+    },
+    "Adaptogens": {
+      "title": "Title will be soon...",
+      "buy": "Comprar ahora"
+    },
+    "Comments": {
+      "title": "Title will be soon...",
+      "comment_1": "He estado tomando productos Solle Naturals durante 5 años y medio. Es un verdadero desafío mencionar todas las bondades de los productos en una breve revisión, porque tienen muchos beneficios. Todo es mejor para mí... desde tener mejor digestión, la mente más tranquila, mejor respuesta al estrés, solo por nombrar algunos. Puedo decir con total honestidad que nunca querría estar sin los productos Solle Naturals.",
+      "comment_2": "Los productos Solle me han devuelto la vida. Antes de que Solle Naturals fuera parte de mi jornada de salud, estaba exhausta y ansiosa todo el tiempo. Mi digestión estaba completamente mal y los niveles de estrés estaban en su punto más alto. Ahora, puedo manejar mejor el estrés, las dificultades, y los ataques de pánico. Tengo energía para superar todas mis tareas y no sufro de ansiedad diaria.",
+      "comment_3": "SolleNaturals me ha ayudado de muchas maneras... Ya no necesito una taza de café para despertarme o una copa de vino para conciliar el sueño... Me preocupo menos y logro hacer más... mi cabello y mis uñas están fuertes y largas, y mis hormonas están están en equilibrio. Soy más feliz y saludable gracias a estos pequeños cambios.",
+      "comment_4": "Soy una madre ocupada con 3 hijos y, por supuesto, lucho con aumento de peso, falta de energía, patrones de sueño intermitentes, estrés, y todo lo que una madre sobrelleva. Pero, me faltaba cuidar de mí misma. Desde que comencé con Solle, ya no siento antojo de tomar café, y lo he suplementado. También encuentro que tengo más energía sin sentir un bajón a las 3:00 pm. En general, estoy bastante satisfecha con lo que he probad.",
+      "comment_5": "Con Solle, tengo más energía, menos dolor y controlo la ansiedad y el estrés... lo cual es imprescindible para ayudarme a superar los días estresantes."
+    }
+  }
+}

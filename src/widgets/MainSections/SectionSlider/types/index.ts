@@ -4,6 +4,7 @@ export interface ISlideItem {
 }
 
 export interface ISlide {
+  key: string;
   title: {
     text: string;
     strong: string;

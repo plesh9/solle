@@ -9,7 +9,7 @@
 
 .container {
   max-width: toRem($maxWidthContainer);
-  padding: 0 toRem($paddingContainer);
+  padding: 0 $paddingContainer;
   margin: 0 auto;
 }
 </style>

@@ -27,3 +27,4 @@ export const useMedia = (query: string) => {
 };
 
 export const isMobile = useMedia('(max-width: 47.99875em)');
+export const isTablet = useMedia('(max-width: 61.99875em)');

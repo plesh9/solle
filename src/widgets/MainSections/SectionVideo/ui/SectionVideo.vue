@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import { BaseContainer } from '@/shared/ui';
-import DesctopVideo from './DesctopVideo.vue';
-import MobileVideo from './MobileVideo.vue';
 import VideoCards from './VideoCards.vue';
 
 import MobileWave from '../images/wave-mobile.png';
 import Wave from '../images/wave.png';
+import { useMyI18n } from '@/app/i18n/hooks';
+
+const { t } = useMyI18n('HomePage.Video');
 </script>
 
 <template>
@@ -18,7 +19,7 @@ import Wave from '../images/wave.png';
       <BaseContainer>
         <div class="preview__content">
           <div class="preview__header">
-            <h3 class="preview__title">Not your typical wellness company</h3>
+            <h3 class="preview__title">{{ t('title') }}</h3>
           </div>
           <div class="player">
             <vue-plyr>

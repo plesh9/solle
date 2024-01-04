@@ -39,7 +39,8 @@ $minWidth: 320;
 $maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
 $maxWidthContainer: 1448;
-$paddingContainer: 24;
+$paddingContainer: var(--padding-сontainer);
+$paddingContainerMinus: var(--padding-сontainer-minus);
 
 // Брейк-поинты
 $pc: em(1199.98); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении

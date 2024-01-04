@@ -2,25 +2,27 @@
 import { ref } from 'vue';
 import { BaseDropdown, LangIcon, CloseIcon } from '@/shared/ui';
 import {
-  EnumLanguage,
   type ILanguageSelectorItem,
   type ILanguageSelectorOption,
 } from '../types';
+import { EnumLanguages } from '@/app/i18n';
+import { i18Storage } from '@/shared/lib';
+import { useMyI18n } from '@/app/i18n/hooks';
 
+const { t, setLocale, getLocale } = useMyI18n('Header');
 const dropdownRef = ref<InstanceType<typeof BaseDropdown> | null>(null);
 const parentRef = ref<HTMLElement | null>(null);
-const selectedLanguage = ref<EnumLanguage>(EnumLanguage.en);
 const dropdownOptions = ref<ILanguageSelectorOption[]>([
   {
-    label: 'Language',
+    label: 'language',
     items: [
       {
         text: 'English  (EN)',
-        value: EnumLanguage.en,
+        value: EnumLanguages.en,
       },
       {
         text: 'Español  (ES)',
-        value: EnumLanguage.es,
+        value: EnumLanguages.es,
       },
     ],
   },
@@ -35,7 +37,8 @@ const closeDropdown = () => {
 };
 
 const selectLanguage = (item: ILanguageSelectorItem) => {
-  selectedLanguage.value = item.value;
+  setLocale(item.value);
+  i18Storage.setLanguage(item.value);
 };
 </script>
 
@@ -61,7 +64,7 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
             :key="index"
             class="language__option"
           >
-            <p class="language__label">{{ option.label }}</p>
+            <p class="language__label">{{ t(option.label) }}</p>
             <ul class="language__items">
               <li
                 class="language__item"
@@ -70,7 +73,7 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
               >
                 <button
                   class="language__button"
-                  :class="{ isActive: selectedLanguage === item.value }"
+                  :class="{ isActive: getLocale() === item.value }"
                   @click="selectLanguage(item)"
                   type="button"
                 >
@@ -93,8 +96,8 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
 
   &__toggler {
     @include flexColumn(center, center);
-    width: toRem(48);
-    height: toRem(48);
+    width: toRem(40);
+    height: toRem(40);
     transition: background-color $transition;
 
     @media (any-hover: hover) {
