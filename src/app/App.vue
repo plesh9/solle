@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { LanguageProvider } from './providers';
 import { MainHeader } from '@/widgets/Header';
 import {
   SectionPreview,
@@ -7,7 +8,6 @@ import {
   SectionAdaptogens,
   SectionComments,
 } from '@/widgets/MainSections';
-import { LanguageProvider } from './providers';
 </script>
 
 <template>

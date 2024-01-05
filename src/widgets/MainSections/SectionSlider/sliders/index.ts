@@ -1,11 +1,5 @@
 import { type ISlide } from '../types';
 
-// import Slide_1 from '../images/slide-1.png';
-// import Slide_2 from '../images/slide-2.png';
-// import Slide_3 from '../images/slide-3.png';
-// import Slide_4 from '../images/slide-4.png';
-// import Slide_5 from '../images/slide-5.png';
-
 import Slide_1 from '../images/slide-01.png';
 import Slide_2 from '../images/slide-02.png';
 import Slide_3 from '../images/slide-03.png';

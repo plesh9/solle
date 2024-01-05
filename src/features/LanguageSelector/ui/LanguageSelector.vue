@@ -37,10 +37,6 @@ const closeDropdown = () => {
   dropdownRef.value?.close();
 };
 
-const toggleDropdown = () => {
-  dropdownRef.value?.toggle();
-};
-
 const selectLanguage = (item: ILanguageSelectorItem) => {
   setLanguage(item.value);
 };
