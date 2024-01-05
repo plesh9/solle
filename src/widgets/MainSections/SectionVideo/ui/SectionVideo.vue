@@ -131,3 +131,15 @@ const { t } = useMyI18n('HomePage.Video');
   }
 }
 </style>
+
+<style lang="scss">
+// .plyr__video-embed,
+// .plyr__video-wrapper--fixed-ratio {
+//   height: 100% !important;
+//   padding-bottom: 0 !important;
+// }
+
+// .plyr__poster {
+//   background-size: cover !important;
+// }
+</style>

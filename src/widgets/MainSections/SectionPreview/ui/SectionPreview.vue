@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { isMobile, isTablet } from '@/shared/lib';
+import { isTablet } from '@/shared/lib';
 import { BaseContainer, BaseButton, BaseAnimation } from '@/shared/ui';
 import Preview from '../images/preview.png';
 import { useMyI18n } from '@/app/i18n/hooks';
@@ -69,7 +69,7 @@ const linkToProduct =
 
   &__wrapper {
     display: grid;
-    grid-template-columns: minmax(toRem(464), 1fr) 1.25fr;
+    grid-template-columns: minmax(toRem(464), 1fr) 1fr;
     align-items: center;
     justify-content: space-between;
     column-gap: toRem(24);

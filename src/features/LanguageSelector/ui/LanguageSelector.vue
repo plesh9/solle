@@ -6,10 +6,11 @@ import {
   type ILanguageSelectorOption,
 } from '../types';
 import { EnumLanguages } from '@/app/i18n';
-import { i18Storage } from '@/shared/lib';
-import { useMyI18n } from '@/app/i18n/hooks';
+import { useLanguage, useMyI18n } from '@/app/i18n/hooks';
 
-const { t, setLocale, getLocale } = useMyI18n('Header');
+const { t, getLocale } = useMyI18n('Header');
+const { setLanguage } = useLanguage();
+
 const dropdownRef = ref<InstanceType<typeof BaseDropdown> | null>(null);
 const parentRef = ref<HTMLElement | null>(null);
 const dropdownOptions = ref<ILanguageSelectorOption[]>([
@@ -36,9 +37,12 @@ const closeDropdown = () => {
   dropdownRef.value?.close();
 };
 
+const toggleDropdown = () => {
+  dropdownRef.value?.toggle();
+};
+
 const selectLanguage = (item: ILanguageSelectorItem) => {
-  setLocale(item.value);
-  i18Storage.setLanguage(item.value);
+  setLanguage(item.value);
 };
 </script>
 
@@ -96,8 +100,8 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
 
   &__toggler {
     @include flexColumn(center, center);
-    width: toRem(40);
-    height: toRem(40);
+    width: toRem(32);
+    height: toRem(32);
     transition: background-color $transition;
 
     @media (any-hover: hover) {
@@ -108,6 +112,11 @@ const selectLanguage = (item: ILanguageSelectorItem) => {
 
     .isOpen & {
       background-color: $grey_light;
+    }
+
+    & svg {
+      width: toRem(32);
+      height: toRem(32);
     }
   }
 

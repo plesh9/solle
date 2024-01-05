@@ -7,17 +7,20 @@ import {
   SectionAdaptogens,
   SectionComments,
 } from '@/widgets/MainSections';
+import { LanguageProvider } from './providers';
 </script>
 
 <template>
-  <div class="wrapper">
-    <MainHeader />
-    <main>
-      <SectionPreview />
-      <SectionSliders />
-      <SectionVideo />
-      <SectionAdaptogens />
-      <SectionComments />
-    </main>
-  </div>
+  <LanguageProvider>
+    <div class="wrapper">
+      <MainHeader />
+      <main>
+        <SectionPreview />
+        <SectionSliders />
+        <SectionVideo />
+        <SectionAdaptogens />
+        <SectionComments />
+      </main>
+    </div>
+  </LanguageProvider>
 </template>

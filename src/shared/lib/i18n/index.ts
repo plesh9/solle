@@ -11,3 +11,13 @@ export const i18Storage = {
     localStorage.setItem(LANG, language);
   },
 };
+
+export const i18Document = {
+  getLanguage: (): EnumLanguages | null => {
+    return document.documentElement.getAttribute(LANG) as EnumLanguages;
+  },
+
+  setLanguage: (language: EnumLanguages) => {
+    document.documentElement.setAttribute(LANG, language);
+  },
+};

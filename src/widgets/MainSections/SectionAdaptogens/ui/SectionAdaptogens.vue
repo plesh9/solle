@@ -39,17 +39,13 @@ const { t } = useMyI18n('HomePage.Adaptogens');
   position: relative;
   width: 100%;
   height: min(100vh, toRem(683));
+  overflow: hidden;
 
   @media (max-width: $mobile) {
     height: min(100vh, toRem(375));
   }
 
   &__bg {
-    &::after {
-      content: '';
-      background-color: #00000099;
-    }
-
     &,
     &::after,
     & > img {
@@ -60,9 +56,22 @@ const { t } = useMyI18n('HomePage.Adaptogens');
       height: 100%;
     }
 
+    @media (max-width: $mobileSmall) {
+    }
+
+    &::after {
+      content: '';
+      background-color: #00000099;
+    }
+
     & > img {
       object-fit: cover;
       object-position: 50% 90%;
+
+      @media (max-width: $mobileSmall) {
+        height: 125%;
+        top: -25%;
+      }
     }
   }
 

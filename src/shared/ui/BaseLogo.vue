@@ -16,8 +16,8 @@
 .logo {
   position: relative;
   display: inline-block;
-  width: toRem(149);
-  height: toRem(40);
+  width: toRem(119);
+  height: toRem(32);
   transition: opacity $transition;
 
   @media (any-hover: hover) {
@@ -32,6 +32,8 @@
     margin: auto;
     object-fit: contain;
     object-position: center;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

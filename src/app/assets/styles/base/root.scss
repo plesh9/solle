@@ -13,12 +13,12 @@
   --green-dark: #c0df163b;
 
   --box-shadow-color: #83838340;
-  --header-height: 72px;
-  --padding-сontainer-minus: -36px;
-  --padding-сontainer: 36px;
+  --header-height: 3.5rem;
+  --padding-сontainer-minus: -2.75rem;
+  --padding-сontainer: 2.75rem;
 
   @media (max-width: $mobile) {
-    --padding-сontainer-minus: -24px;
-    --padding-сontainer: 24px;
+    --padding-сontainer-minus: -1.5rem;
+    --padding-сontainer: 1.5rem;
   }
 }
